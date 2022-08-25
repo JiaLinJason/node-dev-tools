@@ -1,0 +1,29 @@
+{
+  "name": "jarvis",
+  "version": "1.0.0",
+  "description": "node tools for development, include useful tools and some database connect functions",
+  "main": "jarvis.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "node",
+    "tool",
+    "dev"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiaLinJason/node-dev-tools.git"
+  },
+  "author": "shimjialin@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JiaLinJason/node-dev-tools/issues"
+  },
+  "homepage": "https://github.com/JiaLinJason/node-dev-tools#readme",
+  "dependencies": {
+    "mongodb": "^3.6.10",
+    "node-xlsx": "^0.21.0",
+    "nodemailer": "^6.7.8",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "redis": "^4.3.0"
+  }
+}
