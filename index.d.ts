@@ -69,5 +69,11 @@ declare namespace jarvis {
      * @param path input filepath, include file name
      */
     export function readExcel(path: string): Array<any>;
-    export function isNum(target: any): boolean;
+    /**
+     * find innner variable without throwing error
+     * eg: safeFind(myObj, "level1,level2.level3.target")
+     * @param obj source object
+     * @param target a path to find inner variable
+     */
+    export function safeFind(obj: any, target: string): any;
 }

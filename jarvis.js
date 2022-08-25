@@ -99,7 +99,20 @@ const readExcel = (path) => {
     const xlsx = require('node-xlsx');
     return xlsx.parse(path)[0].data;
 };
-const isNum = (num) => !isNaN(parseFloat(num)) && isFinite(num);
+
+const safeFind = (obj, target) => {
+    if (typeof target !== 'string') {
+        throw new TypeError("wrong type of param target, expect string");
+    }
+    if (target[0] === ".") { target = target.slice(1, target.length); }
+    const path = target.split(".");
+    let res = obj;
+    for (let i = 0; i < path.length; i++) {
+        res = res[path[i]]
+        if (res === undefined) return undefined;
+    }
+    return res;
+}
 
 module.exports = {
     sleep,
@@ -112,5 +125,5 @@ module.exports = {
     enableOriginFormat,
     outputExcel,
     readExcel,
-    isNum
+    safeFind
 }
